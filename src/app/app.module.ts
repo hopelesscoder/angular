@@ -8,13 +8,16 @@ import { AppRoutingModule } from './app.routing.module';
 import {UserService} from './user/user.service';
 import {HttpClientModule} from "@angular/common/http";
 import {AddUserComponent} from './user/add-user.component';
+import {CharacterSheetComponent} from './character-sheet/character-sheet.component';
+import { CharacterSheetService } from './character-sheet/characterSheet.service';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     UserComponent,
-	AddUserComponent
+	AddUserComponent,
+	CharacterSheetComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +25,10 @@ import {AddUserComponent} from './user/add-user.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [UserService],
+  providers: [
+	UserService,
+	CharacterSheetService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

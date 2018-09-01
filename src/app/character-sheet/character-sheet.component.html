@@ -1,0 +1,35 @@
+<div class="row">
+<div class="col-md-2">
+</div>
+<div class="col-md-8">
+  <h2 class="text-center">Character sheet</h2>
+<form>
+  <div class="form-group">
+    <label for="name">Character name:</label>
+    <input type="name" [(ngModel)]="characterSheet.name" placeholder="Name" name="name" class="form-control" id="name" required>
+  </div>
+
+  <div class="form-group">
+    <label for="playerName">Player Name:</label>
+    <input [(ngModel)]="characterSheet.playerName" placeholder="Player Name" name="playerName" class="form-control" id="playerName" required>
+  </div>
+
+  <div class="form-group">
+    <label for="alignment">Alignment:</label>
+   <input [(ngModel)]="characterSheet.alignment" placeholder="Alignment" name="alignment" class="form-control" id="alignment" required>
+  </div>
+  
+  <div class="form-group">
+    <label for="level">Level:</label>
+   <input [(ngModel)]="characterSheet.level" placeholder="Level" name="level" class="form-control" id="level" required type="number">
+  </div>
+  
+  <div class="form-group">
+    <label for="race">Race:</label>
+   <input [(ngModel)]="characterSheet.race" placeholder="Race" name="race" class="form-control" id="race" required>
+  </div>
+
+  <button class="btn btn-success" (click)="printCharacterSheet()">Print</button>
+</form>
+</div>
+</div>
