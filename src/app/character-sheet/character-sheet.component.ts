@@ -12,8 +12,21 @@ import { CharacterSheetService } from './characterSheet.service';
   styleUrls: ['./character-sheet.component.css']
 })
 export class CharacterSheetComponent{
+	alignments = ['', 'good/law', 'good/neutral', 'good/chaos', 'neutral/law', 'neutral/neutral', 'neutral/chaos', 'evil/law', 'evil/neutral', 'evil/chaos'];
 	
-	characterSheet: CharacterSheet = new CharacterSheet();
+	defaultStrength: Array<number> = [10, 0];//characteristic and modifier
+	defaultDexterity: Array<number> = [10, 0];//characteristic and modifier
+	defaultConstitution: Array<number> = [10, 0];//characteristic and modifier
+	defaultIntelligence: Array<number> = [10, 0];//characteristic and modifier
+	defaultWisdom: Array<number> = [10, 0];//characteristic and modifier
+	defaultCharisma: Array<number> = [10, 0];//characteristic and modifier
+	
+	characterSheet: CharacterSheet = new CharacterSheet(null, null, this.alignments[0], 1, 1, this.defaultStrength, this.defaultDexterity, 
+		this.defaultConstitution, this.defaultIntelligence, this.defaultWisdom, this.defaultCharisma);
+	
+	submitted = false;
+
+	onSubmit() { this.submitted = true; }
 
 	constructor(private router: Router, private characterSheetService: CharacterSheetService) {
 
@@ -30,5 +43,7 @@ export class CharacterSheetComponent{
 		  });
 
   };
+  
+  
 
 }

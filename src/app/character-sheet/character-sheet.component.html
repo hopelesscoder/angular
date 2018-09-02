@@ -3,33 +3,100 @@
 </div>
 <div class="col-md-8">
   <h2 class="text-center">Character sheet</h2>
-<form>
+<form #CharacterSheet="ngForm" (ngSubmit)="printCharacterSheet()">
   <div class="form-group">
     <label for="name">Character name:</label>
-    <input type="name" [(ngModel)]="characterSheet.name" placeholder="Name" name="name" class="form-control" id="name" required>
+    <input type="name" [(ngModel)]="characterSheet.name" placeholder="Name" name="name" class="form-control" id="name" required #name="ngModel">
+	<div [hidden]="name.valid || name.pristine"class="alert alert-danger">
+		Name is required
+	</div>
   </div>
 
   <div class="form-group">
     <label for="playerName">Player Name:</label>
-    <input [(ngModel)]="characterSheet.playerName" placeholder="Player Name" name="playerName" class="form-control" id="playerName" required>
+    <input [(ngModel)]="characterSheet.playerName" placeholder="Player Name" name="playerName" class="form-control" id="playerName" required #playerName="ngModel"> 
+	<div [hidden]="playerName.valid || playerName.pristine"class="alert alert-danger">
+		Player Name is required
+	</div>
   </div>
 
   <div class="form-group">
     <label for="alignment">Alignment:</label>
-   <input [(ngModel)]="characterSheet.alignment" placeholder="Alignment" name="alignment" class="form-control" id="alignment" required>
+	<select class="form-control"  id="alignment" required [(ngModel)]="characterSheet.alignment" name="alignment" #alignment="ngModel">
+		<option *ngFor="let align of alignments" [value]="align">{{align}}</option>
+	</select>
+	<div [hidden]="alignment.valid || alignment.pristine"class="alert alert-danger">
+		Alignment is required
+	</div>
   </div>
   
   <div class="form-group">
     <label for="level">Level:</label>
-   <input [(ngModel)]="characterSheet.level" placeholder="Level" name="level" class="form-control" id="level" required type="number">
+   <input [(ngModel)]="characterSheet.level" placeholder="Level" name="level" class="form-control" id="level" required type="number" min="1" #level="ngModel">
+	<div [hidden]="level.valid || level.pristine"class="alert alert-danger">
+		Level is required
+	</div>
   </div>
   
   <div class="form-group">
     <label for="race">Race:</label>
-   <input [(ngModel)]="characterSheet.race" placeholder="Race" name="race" class="form-control" id="race" required>
+   <input [(ngModel)]="characterSheet.race" placeholder="Race" name="race" class="form-control" id="race">
+  </div>
+  
+  <div class="form-group">
+    <label for="hp">HP:</label>
+   <input [(ngModel)]="characterSheet.hp" placeholder="HP" name="hp" class="form-control" id="hp" required type="number" min="1" #hp="ngModel">
+	<div [hidden]="hp.valid || hp.pristine"class="alert alert-danger">
+		HP is required
+	</div>
+  </div>
+  
+  <div class="form-group">
+    <label for="strength">Strength:</label>
+   <input [(ngModel)]="characterSheet.strength[0]" placeholder="Strength" name="strength" class="form-control" id="strength" required type="number" min="1" #strength="ngModel">
+	<div [hidden]="strength.valid || strength.pristine"class="alert alert-danger">
+		Strength is required
+	</div>
+  </div>
+  <div class="form-group">
+    <label for="dexterity">Dexterity:</label>
+   <input [(ngModel)]="characterSheet.dexterity[0]" placeholder="Dexterity" name="dexterity" class="form-control" id="dexterity" required type="number" min="1" #dexterity="ngModel">
+	<div [hidden]="dexterity.valid || dexterity.pristine"class="alert alert-danger">
+		Dexterity is required
+	</div>
+  </div>
+  <div class="form-group">
+    <label for="constitution">Constitution:</label>
+   <input [(ngModel)]="characterSheet.constitution[0]" placeholder="Constitution" name="constitution" class="form-control" id="constitution" required type="number" min="1" #constitution="ngModel">
+	<div [hidden]="constitution.valid || constitution.pristine"class="alert alert-danger">
+		Constitution is required
+	</div>
+  </div>
+  <div class="form-group">
+    <label for="cntelligence">Intelligence:</label>
+   <input [(ngModel)]="characterSheet.intelligence[0]" placeholder="Intelligence" name="intelligence" class="form-control" id="intelligence" required type="number" min="1" #intelligence="ngModel">
+	<div [hidden]="intelligence.valid || intelligence.pristine"class="alert alert-danger">
+		intelligence is required
+	</div>
+  </div>
+  <div class="form-group">
+    <label for="wisdom">Wisdom:</label>
+   <input [(ngModel)]="characterSheet.wisdom[0]" placeholder="Wisdom" name="wisdom" class="form-control" id="wisdom" required type="number" min="1" #wisdom="ngModel">
+	<div [hidden]="wisdom.valid || wisdom.pristine"class="alert alert-danger">
+		Wisdom is required
+	</div>
+  </div>
+  <div class="form-group">
+    <label for="charisma">Charisma:</label>
+   <input [(ngModel)]="characterSheet.charisma[0]" placeholder="Charisma" name="charisma" class="form-control" id="charisma" required type="number" min="1" #charisma="ngModel">
+	<div [hidden]="charisma.valid || charisma.pristine"class="alert alert-danger">
+		Charisma is required
+	</div>
   </div>
 
-  <button class="btn btn-success" (click)="printCharacterSheet()">Print</button>
+  <button type="submit" class="btn btn-success"  >Print</button>
+  <!--[disabled]="!CharacterSheet.form.valid"-->
 </form>
 </div>
 </div>
+<br/><br/>
