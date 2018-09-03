@@ -15,17 +15,26 @@
 </div>
 -->
 
-<nav class="navbar navbar-expand-sm bg-light">
+<nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
         <a class="navbar-brand" href="/">Home</a>
-        <ul class="nav navbar-nav" routerLinkActive="active">
-            <li class="nav-item"><a class="nav-link" routerLink="/add">Add User</a></li>
-            <li class="nav-item"><a class="nav-link" routerLink="/characterSheet">Character sheet</a></li>
-            <li class="nav-item"><a class="nav-link" ng-click="downloadPdf(testo di prova)">Download</a></li>
-        </ul>
+
+        
+        <!-- Toggler/collapsibe Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav" routerLinkActive="active">
+              <li class="nav-item"><a class="nav-link" routerLink="/add">Add User</a></li>
+              <li class="nav-item"><a class="nav-link" routerLink="/characterSheet">Character sheet</a></li>
+              <li class="nav-item"><a href="" class="nav-link" ng-click="downloadPdf(testo di prova)">Download</a></li>
+          </ul>
+        </div>
 </nav>
 
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
+<div id="pad70" style="text-align:center">
   <h1>
     Welcome to {{ title }}!
   </h1>
@@ -35,3 +44,16 @@
 <div class="container-fluid">
 <router-outlet></router-outlet>
 </div>
+<style>
+.navbar-dark .navbar-nav .nav-link {
+  color:inherit
+}
+.navbar-dark .navbar-brand {
+  color: inherit;
+}
+#pad70{ padding-top: 70px; }
+@media screen and (max-width: 768px) {
+    body { padding-top: 0px; }
+}
+</style>
+
