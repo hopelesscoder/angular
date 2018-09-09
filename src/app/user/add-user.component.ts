@@ -21,6 +21,14 @@ export class AddUserComponent {
   addUser(): void {
     this.userService.addUser(this.user)
         .subscribe( data => {
+          alert("User added successfully.");
+		  });
+
+  };
+  
+  createUser(): void {
+    this.userService.createUser(this.user)
+        .subscribe( data => {
           alert("User created successfully.");
 		  });
 
