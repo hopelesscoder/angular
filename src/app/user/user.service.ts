@@ -18,6 +18,7 @@ export class UserService {
   //private userUrl = 'http://localhost:8080/user-portal/user';
 	private printUserUrl = 'https://fast-earth-86108.herokuapp.com/printuser';
 	private addUserUrl = 'https://fast-earth-86108.herokuapp.com/adduser';
+	private createUserUrl = 'https://fast-earth-86108.herokuapp.com/api/users';
 
 
   //public getUsers() {
@@ -30,6 +31,11 @@ export class UserService {
 
   public addUser(user) {
     return this.http.post<User>(this.addUserUrl, user);
+  }
+  
+  
+  public createUser(user) {
+    return this.http.post<User>(this.createUserUrl, user);
   }
   
   
