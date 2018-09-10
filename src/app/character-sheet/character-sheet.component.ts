@@ -13,7 +13,8 @@ import { CharacterSheetService } from './characterSheet.service';
 })
 export class CharacterSheetComponent{
 	alignments = ['', 'good/law', 'good/neutral', 'good/chaos', 'neutral/law', 'neutral/neutral', 'neutral/chaos', 'evil/law', 'evil/neutral', 'evil/chaos'];
-	
+	races = ['', 'Dwarf', 'Elf', 'Gnome', 'Half elf', 'Half orc', 'Halfling', 'Human', 'orc'];
+
 	defaultStrength: Array<number> = [10, 0];//characteristic and modifier
 	defaultDexterity: Array<number> = [10, 0];//characteristic and modifier
 	defaultConstitution: Array<number> = [10, 0];//characteristic and modifier
