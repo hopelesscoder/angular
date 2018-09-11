@@ -21,7 +21,7 @@ export class AddUserComponent {
   addUser(): void {
     this.userService.addUser(this.user)
         .subscribe( data => {
-          alert("User added successfully.");
+          alert("User added successfully(fake).");
 		  });
 
   };

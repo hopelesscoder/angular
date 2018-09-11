@@ -16,8 +16,8 @@ import { CharacterSheetService } from './character-sheet/characterSheet.service'
   declarations: [
     AppComponent,
     UserComponent,
-	AddUserComponent,
-	CharacterSheetComponent
+	  AddUserComponent,
+	  CharacterSheetComponent
   ],
   imports: [
     BrowserModule,
@@ -26,8 +26,8 @@ import { CharacterSheetService } from './character-sheet/characterSheet.service'
     FormsModule
   ],
   providers: [
-	UserService,
-	CharacterSheetService
+	  UserService,
+	  CharacterSheetService
   ],
   bootstrap: [AppComponent]
 })
