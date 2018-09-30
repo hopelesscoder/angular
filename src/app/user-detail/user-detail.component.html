@@ -16,11 +16,11 @@
     </thead>
       <tbody>
       <tr>
-        <td class="hidden"><input disabled [(ngModel)]="user.id"/></td>
-        <td><input [(ngModel)]="user.firstName"/></td>
-        <td ><input [(ngModel)]="user.lastName"/></td>
-        <td><input [(ngModel)]="user.email"/></td>
-        <td><input [(ngModel)]="user.createdAt"/></td>
+        <td class="hidden"><input type="text" class="form-control" disabled [(ngModel)]="user.id"/></td>
+        <td><input type="text" class="form-control" [(ngModel)]="user.firstName"/></td>
+        <td><input type="text" class="form-control" [(ngModel)]="user.lastName"/></td>
+        <td><input type="text" class="form-control" [(ngModel)]="user.email"/></td>
+        <td><input type="text" class="form-control" [(ngModel)]="user.createdAt"/></td>
         <td><button class="btn btn-danger" (click)="deleteUser(user)"> Delete User</button></td>
         <td><button class="btn btn-danger" (click)="updateUser(user)"> Update User</button></td>
       </tr>
