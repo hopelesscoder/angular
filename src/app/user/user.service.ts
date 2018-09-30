@@ -15,11 +15,16 @@ export class UserService {
 
   constructor(private http:HttpClient) {}
 
-  //private userUrl = 'http://localhost:8080/user-portal/user';
+  // private userUrl = 'http://localhost:8080/user-portal/user';
 	private printUserUrl = 'https://fast-earth-86108.herokuapp.com/printuser';
 	private addUserUrl = 'https://fast-earth-86108.herokuapp.com/adduser';
 	private mongoUserUrl = 'https://fast-earth-86108.herokuapp.com/api/users';
 
+
+  public getUser(id: string) {
+    const url = `${this.mongoUserUrl}/${id}`;
+    return this.http.get<User>(url);
+  }
 
   public getUsers() {
     return this.http.get<User[]>(this.mongoUserUrl);

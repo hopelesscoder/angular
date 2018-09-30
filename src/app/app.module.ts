@@ -10,6 +10,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {AddUserComponent} from './user/add-user.component';
 import {CharacterSheetComponent} from './character-sheet/character-sheet.component';
 import { CharacterSheetService } from './character-sheet/characterSheet.service';
+import {UserDetailComponent} from './user-detail/user-detail.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { CharacterSheetService } from './character-sheet/characterSheet.service'
     AppComponent,
     UserComponent,
 	  AddUserComponent,
-	  CharacterSheetComponent
+    CharacterSheetComponent,
+    UserDetailComponent
   ],
   imports: [
     BrowserModule,
